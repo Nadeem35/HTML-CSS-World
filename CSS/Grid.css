@@ -3,13 +3,214 @@
   padding: 0px;
 }
 
+/* ____________________  Grid column property  ______________________ */
+
+/* ------- the grid is all about rows and column --------- */
+
+.grid-container {
+  /* display: grid; */
+  /* width: 50%; */
+
+  /* ------- case-1 (for single-column: width col2)------- */
+  /* grid-template-columns: 100px; */
+
+  /* ------- case-2 (for multi-column: width col1 col2)------- */
+  /* grid-template-columns: 100px 200px 50px 300px; */
+
+  /* ----- using repeat function ------ */
+  /* grid-template-columns: repeat(6, 100px); */
+  /* grid-template-columns: 100px 100px 100px 100px 100px 100px; */
+  /* grid-template-rows: repeat(3, 100px); */
+  /* grid-template-columns: repeat(5, 100px); */
+
+  /* ------------- */
+  /* grid-template-columns: 100px auto 100px; */
+  /* grid-template-columns: auto auto auto; */
+
+  /* -------- with fix with 200px and devide remaining space with fr, (auto - occupy space according to the content) ------- */
+  /* grid-template-columns: 200px 1fr 2fr 1fr; */
+  /* grid-template-rows: 100px auto 50px; */
+
+  /* --------- width using minmax(min, max) ------------ */
+  /* grid-template-columns: minmax(100px, 200px) 50px 50px; */
+  /* grid-template-columns: 200px 200px 200px; */
+}
+
+/* 
+.items {
+  border: 0.1px solid #000;
+  width: 80px;
+  text-align: center;
+}
+
+.grid-items-1 {
+  background-color: darkolivegreen;
+}
+
+.grid-items-2 {
+  background-color: darksalmon;
+}
+
+.grid-items-3 {
+  background-color: deepskyblue;
+}
+
+.grid-items-4 {
+  background-color: goldenrod;
+}
+
+.grid-items-5 {
+  background-color: olive;
+}
+
+.grid-items-6 {
+  background-color: darkturquoise;
+}
+
+.grid-items-7 {
+  background-color: green;
+}
+
+.grid-items-8 {
+  background-color: violet;
+}
+
+.grid-items-9 {
+  background-color: peru;
+} */
+
+/* ______________  grid row properties  _____________ */
+
+/* ------- the grid is all about rows and column --------- */
+.grid-container {
+  /* display: grid;
+  width: 50%; */
+
+  /* ------------------------ */
+  grid-template-columns: 200px 200px 200px 200px 200px;
+
+  /* ========================================================= */
+  /* grid-template-rows: 200px 100px 50px 100px; */
+  /* grid-template-rows: 100px repeat(2, 120px); */
+  /* grid-template-rows: repeat(5, 50px 120px); */
+  /* ---------  fr is row will work with the refrence of height  ---------- */
+  height: 70vh;
+
+  grid-template-rows: 1fr 2fr 100px;
+}
+
+.items {
+  border: 0.1px solid #000;
+  /* width: 80px; */
+  /* height: 80px; */
+  text-align: center;
+}
+
+.grid-items-1 {
+  background-color: darkolivegreen;
+  /* ----------- */
+  /* grid-column-start: 4;
+  grid-column-end: 4; */
+  /* ----------------- */
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  /* ----------------- */
+  /* grid-column-start: 1;
+  grid-column-end: -5; */
+  /* -------------- */
+  grid-column-start: span 3;
+}
+
+/* .grid-items-2 {
+  background-color: darksalmon;
+}
+
+.grid-items-3 {
+  background-color: deepskyblue;
+}
+
+.grid-items-4 {
+  background-color: goldenrod;
+}
+
+.grid-items-5 {
+  background-color: olive;
+}
+
+.grid-items-6 {
+  background-color: darkturquoise;
+}
+
+.grid-items-7 {
+  background-color: green;
+}
+
+.grid-items-8 {
+  background-color: violet;
+}
+
+.grid-items-9 {
+  background-color: peru;
+} */
+
+/* ______________  grid Area properties  _____________ */
+
 /* ------- the grid is all about rows and column --------- */
 .grid-container {
   display: grid;
-  grid-template-rows: repeat(5, 100px);
-  grid-template-columns: repeat(15, 100px);
+  width: 50%;
+  height: 70vh;
+
+  /* ------------------------ */
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    "a a a a a a a a a a a a"
+    "b b b b c c c c c c c c"
+    "d d d d d d d d d d d d";
 }
 
-.grid-items {
-  border: 2px solid red;
+.items {
+  border: 0.1px solid #000;
+  text-align: center;
+}
+
+.grid-items-1 {
+  background-color: darkolivegreen;
+  grid-area: a;
+}
+
+.grid-items-2 {
+  background-color: darksalmon;
+  grid-area: b;
+}
+
+.grid-items-3 {
+  background-color: deepskyblue;
+  grid-area: c;
+}
+
+.grid-items-4 {
+  background-color: goldenrod;
+  grid-area: d;
+}
+
+.grid-items-5 {
+  background-color: olive;
+}
+
+.grid-items-6 {
+  background-color: darkturquoise;
+}
+
+.grid-items-7 {
+  background-color: green;
+}
+
+.grid-items-8 {
+  background-color: violet;
+}
+
+.grid-items-9 {
+  background-color: peru;
 }
